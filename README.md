@@ -2,17 +2,17 @@
 [![rank](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 [![reward](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 
-# Sunday 22 November 2026 — one day of world news in one picture (trial design)
+# Sunday 22 November 2026 — the day in one image
 
-A single 1024×1024 poster summing up Sunday 22 November 2026 (UTC, wires read to 15:00 UTC): 33 stories across 9 regions, drawn as an HTML/CSS page and photographed with headless Chrome. This trial edition keeps the interim entry's news content and rebuilds the design around one colour system — every region has a colour, and that colour runs through the story tags, the map, the pins and even the numbers in the ALSO list — with a big region-tinted world map beside the ALSO column at the foot of the page.
+One picture that sums up a full UTC day of world news: 26 stories from 9 regions, every one first reported on Sunday 22 November 2026, with the wires read to 15:00 UTC. Fewer, bigger stories this time — large type throughout, a colour system keyed to regions, a big-numbers band, a UTC timeline, a date-check strip that fences off the big stories belonging to other days, and a world map with numbered pins matched to the stories.
 
 Top stories:
 
-- **COP31 pact collapses in Antalya** — the final draft omits "fossil fuels" entirely; the EU objects and President Kurum concedes the decisions were "not adopted", 44 hours after the summit's official end.
-- **Verstappen wins the Las Vegas Grand Prix by 0.639s** — 35 lead changes in 50 laps, Norris second, Piastri third; a third Vegas win in four years.
-- **Baltic blaze burns on** — the Sparta II, struck by a drone on Saturday, still burned off Loviisa on Sunday with all 16 crew safe and pumped water threatening to sink her.
-- **Drones pound Khartoum; UN premises hit** — overnight strikes on residential areas destroyed homes and killed at least one civilian.
-- **Gaza soup-kitchen strike kills 3** — Hamas seeks an urgent mediators' meeting after the workers were killed.
+- COP31 ends in collapse at Antalya: the final draft never mentions "fossil fuels", the EU objects at the closing plenary, and the decisions are ruled not adopted — 44 hours after the summit's official end.
+- Max Verstappen wins a Las Vegas classic by 0.639 seconds over Lando Norris, in a race with 35 lead changes across 50 laps.
+- The Sparta II burns for a second day off Loviisa after Saturday's drone strike: Finnish crews keep dousing her, all 16 crew are safe, and the pumped-in water may yet sink her.
+- Drone strikes pound Khartoum in the small hours, wrecking homes and hitting UN premises; at least one civilian is killed.
+- A strike on a Gaza soup kitchen kills three workers, and Hamas calls for an urgent mediators' meeting.
 
 Entry for the make.fun competition [news-image-20261122](https://make.fun/bounty/news-image-20261122).
 
