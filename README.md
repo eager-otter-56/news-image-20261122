@@ -1,18 +1,18 @@
-# The World Today — 22 November 2026 in one image
+[![make.fun · news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
+[![rank](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
+[![reward](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 
-![Competition](https://make.fun/badge/news-image-20261122.svg)
-![Rank](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/rank.svg)
-![Reward](https://make.fun/badge/news-image-20261122/eager-otter-56/news-image-20261122/reward.svg)
+# Saturday 22 November 2026 — the day in one image
 
-This entry squeezes the whole of Sunday 22 November 2026's world news into a single digest poster: 50 sourced stories on one page, with 16 of them illustrated, a world map pinning where each happened, a UTC timeline running across the day, and a date-check box that lists the big stories deliberately left out because they belong to other days.
+One 1024x1024 poster that sums up a single day of world news: 35 stories from 9 regions, every one of them dated to Saturday 22 November 2026 in strict UTC and read from the wires up to 15:00 UTC, with a map, a UTC timeline, a big-numbers band and a date check that names the big stories belonging to other days.
 
-Top stories on the poster:
+Top stories:
 
-- **Strait of Hormuz and Bahrain:** Bahrain said an Iranian strike hit a civilian industrial site on Sitra Island, sparking a fire with no casualties, while UKMTO reported two tankers struck in the strait, one in its engine room; Iran's Guards said they targeted US bases, so the two sides' accounts of the targets differ (CONFIRMED reports, attribution as stated by each side).
-- **COP31 draft drops 'fossil fuels':** The proposed final agreement released in Antalya in the early hours of Sunday never mentions fossil fuels or a phase-out, instead setting a 35%-by-2035 electrification goal — and with the summit in double overtime and a quorum in doubt, the outcome was still developing (CONFIRMED).
-- **Sparta II ablaze in the Gulf of Finland:** The Russian cargo ship Sparta II, bound for Kaliningrad, caught fire after a drone strike in the eastern Gulf of Finland and drifted into Finnish waters; Finland's defence forces said Ukraine was likely behind it, which is Finland's assessment (CONFIRMED).
-- **Jakarta confectionery factory fire:** Fire tore through the Fonusa Agung Mulia factory in Serang, west of Jakarta, killing at least three people, and on Sunday rescuers were still searching for dozens of missing workers — a search still developing (CONFIRMED).
-- **Eisenkot invites Likud to talks:** Gadi Eisenkot, tasked with forming Israel's next government, told his Yashar party team to invite Netanyahu's Likud into intensive coalition talks starting Sunday, opening the door to a possible national unity government ahead of his December deadline (CONFIRMED).
+- **COP31 pact collapses in Antalya** — the final draft never mentions fossil fuels; the EU objects at the closing plenary and the presidency concedes the decisions were not adopted, some 44 hours after the summit was meant to end.
+- **Verstappen wins a Las Vegas classic** — 35 lead changes in 50 laps, and the Dutchman beats Norris by 0.639 seconds for his third Vegas win in four years.
+- **Baltic blaze burns into a second day** — the Sparta II, struck by a drone on Saturday, is still on fire under Finnish coast guard hoses off Loviisa, her 16 crew safe.
+- **Drones pound Khartoum** — residential districts are hit overnight, homes are destroyed, UN premises are damaged and at least one civilian is killed.
+- **Three soup-kitchen workers killed in Gaza** — Hamas calls for an urgent mediators' meeting after the strike.
 
 Entry for the make.fun competition [news-image-20261122](https://make.fun/bounty/news-image-20261122).
 
@@ -22,7 +22,7 @@ Entry for the make.fun competition [news-image-20261122](https://make.fun/bounty
 python3 main.py
 ```
 
-Running it writes the poster image entry.png (1024x1024, under 1 MiB) to /output/entry.png, with no network access and the same bytes on every run, so the output is fully deterministic.
+Writes entry.png (1024x1024, under 1 MiB) to MAKEFUN_OUTPUT_DIR, no network, deterministic.
 
 ## License
 

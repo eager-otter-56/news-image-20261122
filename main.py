@@ -1,52 +1,57 @@
-#!/usr/bin/env python3
-"""Entry program for make.fun news-image-20261122.
+"""Copy the bundled entry.png poster to the output directory.
 
-Publishes the entry.png sitting beside this file to /output/entry.png
-with an atomic, self-checking copy: the bytes are first written to a
-temporary file inside /output, read back and verified against the
-source (same length, and starting with the PNG signature), and only
-then moved onto /output/entry.png with os.replace, so a reader never
-sees a half-written file and a corrupt copy never lands. No network,
-no randomness: every run writes the same bytes.
+The poster (entry.png, 1024x1024) sits next to this file. Running this
+script writes it to the directory named by the MAKEFUN_OUTPUT_DIR
+environment variable, or to the current working directory when that
+variable is not set. No network access is needed and the output is
+byte-for-byte identical to the bundled poster on every run.
 """
+
+import hashlib
 import os
 import tempfile
-
-HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "entry.png")
-DST_DIR = "/output"
-DST = os.path.join(DST_DIR, "entry.png")
-
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
 
 def main():
-    os.makedirs(DST_DIR, exist_ok=True)
-    with open(SRC, "rb") as f:
-        data = f.read()
+    here = os.path.dirname(os.path.abspath(__file__))
+    src = os.path.join(here, "entry.png")
+    with open(src, "rb") as fh:
+        data = fh.read()
+    if not data.startswith(PNG_SIGNATURE):
+        raise ValueError("bundled entry.png is not a PNG file")
+    expected = hashlib.sha256(data).hexdigest()
 
-    # Stage the copy in a temp file inside /output, then verify what
-    # actually landed on disk before publishing it atomically.
-    fd, tmp = tempfile.mkstemp(dir=DST_DIR, prefix=".entry-", suffix=".tmp")
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or os.getcwd()
+    os.makedirs(out_dir, exist_ok=True)
+    out = os.path.join(out_dir, "entry.png")
+
+    # Write to a temp file inside the output directory, verify it, then
+    # move it into place atomically so a partial file is never visible.
+    fd, tmp = tempfile.mkstemp(dir=out_dir, prefix=".entry-", suffix=".tmp")
     try:
-        with os.fdopen(fd, "wb") as f:
-            f.write(data)
-        with open(tmp, "rb") as f:
-            copied = f.read()
-        if len(copied) != len(data):
-            raise ValueError(
-                "copied length %d does not match source length %d"
-                % (len(copied), len(data))
-            )
-        if not copied.startswith(PNG_SIGNATURE):
-            raise ValueError("copied bytes do not start with the PNG signature")
-        os.replace(tmp, DST)
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(data)
+            fh.flush()
+            os.fsync(fh.fileno())
+        with open(tmp, "rb") as fh:
+            written = fh.read()
+        if len(written) != len(data):
+            raise IOError("short write while copying entry.png")
+        if hashlib.sha256(written).hexdigest() != expected:
+            raise IOError("copy verification failed for entry.png")
+        os.replace(tmp, out)
     except BaseException:
-        if os.path.exists(tmp):
+        try:
             os.unlink(tmp)
+        except OSError:
+            pass
         raise
-    os.chmod(DST, 0o644)
+    # mkstemp creates the temp file with mode 0600, and os.replace keeps
+    # that mode; make the delivered poster world-readable as required.
+    os.chmod(out, 0o644)
+    print("wrote", out)
 
 
 if __name__ == "__main__":
